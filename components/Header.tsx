@@ -15,37 +15,51 @@ const navItems = [
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 80);
+    let lastY = window.scrollY;
+
+    const onScroll = () => {
+      const currentY = window.scrollY;
+      setScrolled(currentY > 80);
+      // hide when scrolling down past 120px, show when scrolling up
+      if (currentY > 120 && currentY > lastY) {
+        setHidden(true);
+      } else {
+        setHidden(false);
+      }
+      lastY = currentY;
+    };
+
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-50 px-4 py-4 sm:px-7 sm:py-8 lg:px-10">
+    <header
+      className={`fixed left-0 right-0 top-0 z-50 px-4 py-4 transition-transform duration-500 sm:px-7 sm:py-8 lg:px-10 ${
+        hidden ? "-translate-y-full" : "translate-y-0"
+      }`}
+    >
       <div
-        className={`relative mx-auto flex max-w-[1880px] items-center rounded-full border px-4 py-3 backdrop-blur-md transition-all duration-700 sm:px-6 ${
+        className={`relative mx-auto flex max-w-[1880px] items-center rounded-full border px-4 py-3 backdrop-blur-md transition-all duration-500 sm:px-6 ${
           scrolled
-            ? "border-white/5 bg-[#1a1a1a]/70 shadow-[0_8px_24px_rgba(0,0,0,0.15)]"
+            ? "border-white/5 bg-[#0f2d1c]/40 shadow-[0_8px_24px_rgba(0,0,0,0.1)]"
             : "border-white/10 bg-[#0f2d1c]/65 shadow-[0_16px_40px_rgba(0,0,0,0.2)]"
         }`}
       >
         {/* Logo — absolute, floats above the pill */}
-        <div className="absolute md:-top-14 left-4 sm:left-6 lg:left-8">
+        <a href="/#hero" className="absolute md:-top-14 left-4 sm:left-6 lg:left-8">
           {/* Sun glow — behind logo only */}
           <div
-            className={`absolute left-1/2 top-1/2 -z-10 -translate-x-1/2 -translate-y-1/2 transition-all duration-700 ${
-              scrolled ? "opacity-20 scale-75" : "opacity-100 scale-100"
+            className={`absolute left-1/2 top-1/2 -z-10 -translate-x-1/2 -translate-y-1/2 transition-all duration-500 ${
+              scrolled ? "opacity-30 scale-75" : "opacity-100 scale-100"
             }`}
           >
-            {/* Core glow */}
             <div className="h-20 w-20 rounded-full bg-[#f6c94e] opacity-90 blur-[6px] sm:h-24 sm:w-24 lg:h-32 lg:w-32" />
-            {/* Mid ring */}
             <div className="absolute inset-0 -m-4 rounded-full bg-[#f9a825] opacity-40 blur-[14px]" />
-            {/* Outer halo */}
             <div className="absolute inset-0 -m-8 rounded-full bg-[#ffd54f] opacity-20 blur-[28px]" />
-            {/* Sun rays */}
             {[0,30,60,90,120,150,180,210,240,270,300,330].map((deg) => (
               <div
                 key={deg}
@@ -60,21 +74,20 @@ export default function Header() {
             alt="Alif Agro Nutrition"
             width={160}
             height={80}
-            className={`relative h-16 w-auto transition-all duration-700 sm:h-20 lg:h-40 ${
-              scrolled ? "opacity-60 grayscale" : "opacity-100 grayscale-0"
+            className={`relative h-16 w-auto transition-all duration-500 sm:h-20 lg:h-40 ${
+              scrolled ? "opacity-70" : "opacity-100"
             }`}
             style={{ width: "auto" }}
             priority
           />
-        </div>
+        </a>
 
-        {/* Spacer matching logo width so nav stays centred */}
         <div className="w-32 shrink-0 sm:w-40 lg:w-48" />
 
         {/* Nav — centred, desktop only */}
         <nav
-          className={`hidden flex-1 items-center justify-center gap-6 text-[16px] transition-all duration-700 lg:flex xl:gap-9 ${
-            scrolled ? "text-white/45" : "text-white/85"
+          className={`hidden flex-1 items-center justify-center gap-6 text-[16px] transition-all duration-500 lg:flex xl:gap-9 ${
+            scrolled ? "text-white/55" : "text-white/85"
           }`}
         >
           {navItems.map((item) => (
@@ -97,7 +110,7 @@ export default function Header() {
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
-          className={`flex h-10 w-10 shrink-0 flex-col items-center justify-center gap-[5px] rounded-full border transition-all duration-700 lg:hidden ${
+          className={`flex h-10 w-10 shrink-0 flex-col items-center justify-center gap-[5px] rounded-full border transition-all duration-500 lg:hidden ${
             scrolled ? "border-white/8 bg-white/5" : "border-white/15 bg-white/8"
           }`}
         >
