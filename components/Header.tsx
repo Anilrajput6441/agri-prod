@@ -1,15 +1,16 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const navItems = [
-  { label: "Home", href: "#hero" },
-  { label: "About Us", href: "#about" },
-  { label: "Our Products", href: "#products" },
-  { label: "Blogs", href: "#network" },
-  { label: "FAQ's", href: "#about" },
-  { label: "Contact Us", href: "#contact" },
+  { label: "Home", href: "/#hero" },
+  { label: "About Us", href: "/#about" },
+  { label: "Our Products", href: "/#products" },
+  { label: "Blogs", href: "/#network" },
+  { label: "FAQ's", href: "/#about" },
+  { label: "Contact Us", href: "/#contact" },
 ];
 
 export default function Header() {
@@ -50,7 +51,7 @@ export default function Header() {
         }`}
       >
         {/* Logo — absolute, floats above the pill */}
-        <a href="/#hero" className="absolute md:-top-14 left-4 sm:left-6 lg:left-8">
+        <Link href="/#hero" className="absolute md:-top-14 left-4 sm:left-6 lg:left-8">
           {/* Sun glow — behind logo only */}
           <div
             className={`absolute left-1/2 top-1/2 -z-10 -translate-x-1/2 -translate-y-1/2 transition-all duration-500 ${
@@ -80,7 +81,7 @@ export default function Header() {
             style={{ width: "auto" }}
             priority
           />
-        </a>
+        </Link>
 
         <div className="w-32 shrink-0 sm:w-40 lg:w-48" />
 

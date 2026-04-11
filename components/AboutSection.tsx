@@ -69,9 +69,9 @@ export default function AboutSection() {
           </p>
         </div>
 
-        <div className="mt-14 grid items-start gap-10 lg:grid-cols-[0.98fr_1.02fr] lg:gap-12">
+        <div className="mt-14 grid items-stretch gap-10 lg:grid-cols-[0.98fr_1.02fr] lg:gap-12">
           <div className="relative overflow-hidden rounded-[2px] bg-[#eee6da] shadow-[0_14px_30px_rgba(57,38,15,0.1)]">
-            <div className="relative aspect-[4/3] w-full overflow-hidden">
+            <div className="relative h-full min-h-[340px] w-full overflow-hidden">
               {slides.map((slide, index) => (
                 <div
                   key={slide.src}
@@ -144,7 +144,7 @@ export default function AboutSection() {
 
             <div className="mt-10">
               <a
-                href="#"
+                href="#contact"
                 className="inline-flex items-center justify-center rounded-[2px] bg-[#79b96f] px-8 py-4 text-[16px] font-medium text-white shadow-[0_10px_22px_rgba(0,0,0,0.08)] transition-transform hover:-translate-y-0.5"
               >
                 Contact Us

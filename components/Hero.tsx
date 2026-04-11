@@ -1,7 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
+import { FaHandshake, FaLeaf } from "react-icons/fa";
 import { products } from "../data/products";
 
 const slides = [
@@ -109,18 +111,20 @@ export default function Hero() {
 
                 {/* Buttons — visible on sm+ inline with text column */}
                 <div className="mt-7 hidden flex-col gap-3 sm:flex sm:flex-row">
-                  <a
-                    href="#"
-                    className="inline-flex items-center justify-center rounded-full bg-[#d49a2f] px-6 py-3 text-[16px] font-semibold text-white shadow-[0_18px_35px_rgba(0,0,0,0.18)] transition-transform hover:-translate-y-0.5 sm:min-w-[260px]"
+                  <Link
+                    href="/#products"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#d49a2f] px-6 py-3 text-[16px] font-semibold text-white shadow-[0_18px_35px_rgba(0,0,0,0.18)] transition-transform hover:-translate-y-0.5 sm:min-w-[260px]"
                   >
-                    🌿 Explore Products
-                  </a>
-                  <a
-                    href="#"
-                    className="inline-flex items-center justify-center rounded-full border border-white/18 bg-white/5 px-6 py-3 text-[16px] font-semibold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] backdrop-blur-sm transition-colors hover:bg-white/10 sm:min-w-[260px]"
+                    <FaLeaf className="h-4 w-4" />
+                    Explore Products
+                  </Link>
+                  <Link
+                    href="/#network"
+                    className="inline-flex items-center justify-center gap-2 rounded-full border border-white/18 bg-white/5 px-6 py-3 text-[16px] font-semibold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] backdrop-blur-sm transition-colors hover:bg-white/10 sm:min-w-[260px]"
                   >
-                    🤝 Our Partnerships
-                  </a>
+                    <FaHandshake className="h-4 w-4" />
+                    Our Partnerships
+                  </Link>
                 </div>
               </div>
 
@@ -141,15 +145,17 @@ export default function Hero() {
                 <div className="mt-6 grid grid-cols-3 gap-x-4 gap-y-4 sm:grid-cols-5">
                   {productTags.map((item) => (
                     <article key={item.name} className="text-center">
-                      <div className="relative mx-auto h-16 w-full max-w-[88px] sm:h-20 sm:max-w-[96px]">
-                        <Image
-                          src={item.src}
-                          alt={item.name}
-                          fill
-                          sizes="96px"
-                          className="object-contain"
-                        />
-                      </div>
+                      <Link href={`/products/${item.slug}`} className="block">
+                        <div className="relative mx-auto h-16 w-full max-w-[88px] sm:h-20 sm:max-w-[96px]">
+                          <Image
+                            src={item.src}
+                            alt={item.name}
+                            fill
+                            sizes="96px"
+                            className="object-contain transition-transform duration-300 hover:scale-110"
+                          />
+                        </div>
+                      </Link>
                       <p className="mt-2 text-[12px] text-white/78 sm:text-[13px]">
                         {item.name}
                       </p>
@@ -161,18 +167,20 @@ export default function Hero() {
 
             {/* Buttons — mobile only, pinned to bottom */}
             <div className="flex flex-col gap-3 sm:hidden">
-              <a
-                href="#"
-                className="inline-flex items-center justify-center rounded-full bg-[#d49a2f] px-6 py-3 text-[16px] font-semibold text-white shadow-[0_18px_35px_rgba(0,0,0,0.18)] transition-transform hover:-translate-y-0.5"
+              <Link
+                href="/#products"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#d49a2f] px-6 py-3 text-[16px] font-semibold text-white shadow-[0_18px_35px_rgba(0,0,0,0.18)] transition-transform hover:-translate-y-0.5"
               >
-                🌿 Explore Products
-              </a>
-              <a
-                href="#"
-                className="inline-flex items-center justify-center rounded-full border border-white/18 bg-white/5 px-6 py-3 text-[16px] font-semibold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] backdrop-blur-sm transition-colors hover:bg-white/10"
+                <FaLeaf className="h-4 w-4" />
+                Explore Products
+              </Link>
+              <Link
+                href="/#network"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/18 bg-white/5 px-6 py-3 text-[16px] font-semibold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] backdrop-blur-sm transition-colors hover:bg-white/10"
               >
-                🤝 Our Partnerships
-              </a>
+                <FaHandshake className="h-4 w-4" />
+                Our Partnerships
+              </Link>
             </div>
           </div>
         </div>
