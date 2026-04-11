@@ -44,7 +44,7 @@ const metricCards: Array<{
 
 export default function GlobalNetworkSection() {
   return (
-    <section id="network" className="scroll-mt-32 bg-[#e9ddd0] ">
+    <section id="network" className="scroll-mt-32 bg-[#e9ddd0]">
       <div className="mx-auto max-w-[1560px]">
         <div className="relative overflow-hidden rounded-[22px] border border-[#d2bca4]/45 bg-[#ede0d2] shadow-[0_26px_70px_rgba(59,43,29,0.22)]">
           <div className="absolute inset-0">
@@ -73,11 +73,12 @@ export default function GlobalNetworkSection() {
                   Partnerships
                 </h2>
                 <p className="mt-6 max-w-[640px] text-[18px] leading-[1.6] text-[#5e4b3d]/88">
-                  AgroVista Exports operates in strategic alliance with
-                  International Nature, a globally recognized trade and
-                  distribution organization. Together, we create a seamless
-                  bridge between Indian agricultural excellence and international
-                  buyers, ensuring compliance, quality, and trust at every step.
+                  Alif Agro Nutrition operates in strategic alliance with
+                  Tabbasum Export and Nature International, globally recognized
+                  trade and distribution organizations. Together, we create a
+                  seamless bridge between Indian agricultural excellence and
+                  international buyers, ensuring compliance, quality, and trust
+                  at every step.
                 </p>
 
                 <div className="mt-8 space-y-4">
@@ -106,9 +107,10 @@ export default function GlobalNetworkSection() {
 
               <div className="lg:pt-10">
                 <article className="rounded-3xl border border-[#c6a07a]/35 bg-[#f3e3d1]/84 p-6 text-center backdrop-blur-sm sm:p-8">
-                  <p className="text-3xl font-semibold text-[#a66d31]">IN</p>
-                  <h3 className="mt-3 text-[clamp(1.9rem,3vw,3.4rem)] font-semibold tracking-[-0.02em] text-[#ad7436]">
-                    INTERNATIONAL NATURE
+                  <p className="text-3xl font-semibold text-[#a66d31]">TE · NI</p>
+                  <h3 className="mt-3 text-[clamp(1.4rem,2.4vw,2.6rem)] font-semibold tracking-[-0.02em] text-[#ad7436]">
+                    TABBASUM EXPORT &
+                    <span className="block">NATURE INTERNATIONAL</span>
                   </h3>
                   <p className="mt-2 text-[12px] uppercase tracking-[0.25em] text-[#6f5a47]/74">
                     Our Global Partner

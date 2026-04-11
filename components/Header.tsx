@@ -1,64 +1,130 @@
+"use client";
+
+import Image from "next/image";
+import { useEffect, useState } from "react";
+
 const navItems = [
   { label: "Home", href: "#hero" },
   { label: "About Us", href: "#about" },
   { label: "Our Products", href: "#products" },
-  { label: "Packaging Solution", href: "#network" },
-  { label: "Catalogue", href: "#products" },
   { label: "Blogs", href: "#network" },
   { label: "FAQ's", href: "#about" },
   { label: "Contact Us", href: "#contact" },
 ];
 
 export default function Header() {
-  return (
-    <header className="fixed left-0 right-0 top-0 z-50 px-4 py-4 sm:px-7 sm:py-6 lg:px-10">
-      <div className="mx-auto flex max-w-[1880px] items-center justify-between rounded-full border border-white/10 bg-[#0f2d1c]/65 px-4 py-3 shadow-[0_16px_40px_rgba(0,0,0,0.2)] backdrop-blur-md sm:px-6">
-        <nav className="hidden flex-1 items-center justify-start gap-6 text-[17px] text-white/88 lg:flex xl:gap-10">
-          {navItems.slice(0, 4).map((item, index) => (
-            <a
-              key={item.label}
-              href={item.href}
-              className="whitespace-nowrap font-[500] tracking-[-0.01em] transition-opacity hover:opacity-100"
-            >
-              {item.label}
-              {index < 3 ? <span className="ml-1 text-white/55">▾</span> : null}
-            </a>
-          ))}
-        </nav>
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-        <div className="flex flex-1 justify-center">
-          <div className="flex h-14 w-14 items-center justify-center rounded-full border border-[#f1cf7e]/55 bg-white/10 text-[#f6d57b] backdrop-blur-[2px] sm:h-16 sm:w-16">
-            <span className="text-[28px] font-semibold leading-none tracking-[-0.08em] sm:text-[34px]">
-              F
-            </span>
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 80);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <header className="fixed left-0 right-0 top-0 z-50 px-4 py-4 sm:px-7 sm:py-8 lg:px-10">
+      <div
+        className={`relative mx-auto flex max-w-[1880px] items-center rounded-full border px-4 py-3 backdrop-blur-md transition-all duration-700 sm:px-6 ${
+          scrolled
+            ? "border-white/5 bg-[#1a1a1a]/70 shadow-[0_8px_24px_rgba(0,0,0,0.15)]"
+            : "border-white/10 bg-[#0f2d1c]/65 shadow-[0_16px_40px_rgba(0,0,0,0.2)]"
+        }`}
+      >
+        {/* Logo — absolute, floats above the pill */}
+        <div className="absolute md:-top-14 left-4 sm:left-6 lg:left-8">
+          {/* Sun glow — behind logo only */}
+          <div
+            className={`absolute left-1/2 top-1/2 -z-10 -translate-x-1/2 -translate-y-1/2 transition-all duration-700 ${
+              scrolled ? "opacity-20 scale-75" : "opacity-100 scale-100"
+            }`}
+          >
+            {/* Core glow */}
+            <div className="h-20 w-20 rounded-full bg-[#f6c94e] opacity-90 blur-[6px] sm:h-24 sm:w-24 lg:h-32 lg:w-32" />
+            {/* Mid ring */}
+            <div className="absolute inset-0 -m-4 rounded-full bg-[#f9a825] opacity-40 blur-[14px]" />
+            {/* Outer halo */}
+            <div className="absolute inset-0 -m-8 rounded-full bg-[#ffd54f] opacity-20 blur-[28px]" />
+            {/* Sun rays */}
+            {[0,30,60,90,120,150,180,210,240,270,300,330].map((deg) => (
+              <div
+                key={deg}
+                className="absolute left-1/2 top-1/2 h-[2px] w-8 origin-left -translate-y-1/2 rounded-full bg-[#ffe082] opacity-60 blur-[1px] sm:w-10 lg:w-14"
+                style={{ transform: `translateY(-50%) rotate(${deg}deg)` }}
+              />
+            ))}
           </div>
+
+          <Image
+            src="/aliflogo.png"
+            alt="Alif Agro Nutrition"
+            width={160}
+            height={80}
+            className={`relative h-16 w-auto transition-all duration-700 sm:h-20 lg:h-40 ${
+              scrolled ? "opacity-60 grayscale" : "opacity-100 grayscale-0"
+            }`}
+            style={{ width: "auto" }}
+            priority
+          />
         </div>
 
-        <nav className="hidden flex-1 items-center justify-end gap-6 text-[17px] text-white/88 lg:flex xl:gap-10">
-          {navItems.slice(4).map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              className="whitespace-nowrap font-[500] tracking-[-0.01em] transition-opacity hover:opacity-100"
-            >
-              {item.label}
-            </a>
-          ))}
-        </nav>
-      </div>
+        {/* Spacer matching logo width so nav stays centred */}
+        <div className="w-32 shrink-0 sm:w-40 lg:w-48" />
 
-      <div className="mx-auto mt-3 max-w-[1880px] lg:hidden">
-        <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 rounded-full border border-white/10 bg-[#0f2d1c]/55 px-4 py-3 text-[14px] text-white/84 shadow-[0_12px_30px_rgba(0,0,0,0.12)] backdrop-blur-md sm:text-[15px]">
+        {/* Nav — centred, desktop only */}
+        <nav
+          className={`hidden flex-1 items-center justify-center gap-6 text-[16px] transition-all duration-700 lg:flex xl:gap-9 ${
+            scrolled ? "text-white/45" : "text-white/85"
+          }`}
+        >
           {navItems.map((item) => (
             <a
               key={item.label}
               href={item.href}
-              className="font-medium tracking-[-0.01em]"
+              className="whitespace-nowrap font-[500] tracking-[-0.01em] transition-opacity hover:opacity-100"
             >
               {item.label}
             </a>
           ))}
-        </div>
+        </nav>
+
+        {/* Spacer — pushes hamburger to the right on mobile */}
+        <div className="flex-1 lg:hidden" />
+
+        {/* Hamburger — mobile/tablet */}
+        <button
+          type="button"
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          onClick={() => setOpen((v) => !v)}
+          className={`flex h-10 w-10 shrink-0 flex-col items-center justify-center gap-[5px] rounded-full border transition-all duration-700 lg:hidden ${
+            scrolled ? "border-white/8 bg-white/5" : "border-white/15 bg-white/8"
+          }`}
+        >
+          <span className={`block h-[2px] w-5 rounded-full bg-white transition-transform duration-300 ${open ? "translate-y-[7px] rotate-45" : ""}`} />
+          <span className={`block h-[2px] w-5 rounded-full bg-white transition-opacity duration-300 ${open ? "opacity-0" : ""}`} />
+          <span className={`block h-[2px] w-5 rounded-full bg-white transition-transform duration-300 ${open ? "-translate-y-[7px] -rotate-45" : ""}`} />
+        </button>
+      </div>
+
+      {/* Mobile drawer */}
+      <div
+        className={`mx-auto mt-2 max-w-[1880px] overflow-hidden rounded-2xl border border-white/10 bg-[#0f2d1c]/90 shadow-[0_16px_40px_rgba(0,0,0,0.25)] backdrop-blur-md transition-all duration-300 lg:hidden ${
+          open ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <nav className="flex flex-col px-5 py-4">
+          {navItems.map((item) => (
+            <a
+              key={item.label}
+              href={item.href}
+              onClick={() => setOpen(false)}
+              className="border-b border-white/8 py-3 text-[16px] font-medium text-white/88 transition-colors hover:text-white last:border-0"
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
       </div>
     </header>
   );

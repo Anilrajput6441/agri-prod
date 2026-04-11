@@ -83,6 +83,7 @@ export default function AboutSection() {
                     src={slide.src}
                     alt={slide.alt}
                     fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover"
                     priority={index === 0}
                   />

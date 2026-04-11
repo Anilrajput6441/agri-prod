@@ -15,22 +15,27 @@ const reachItems: Array<{
   {
     icon: FaEnvelope,
     label: "Email",
-    value: "exports@agrovista.in",
+    value: "alifnutri9@gmail.com",
   },
   {
     icon: FaPhoneAlt,
-    label: "Phone / WhatsApp",
-    value: "+91 98765 43210",
+    label: "Dr Mubin Uddin Khan",
+    value: "+91 84482 37673",
+  },
+  {
+    icon: FaPhoneAlt,
+    label: "Yawar Khan",
+    value: "+91 81820 19713",
   },
   {
     icon: FaMapMarkerAlt,
-    label: "Office",
-    value: "Kanpur, Uttar Pradesh, India",
+    label: "Company",
+    value: "Alif Agro Nutrition",
   },
   {
     icon: FaGlobe,
-    label: "Partnership",
-    value: "International Nature - Global Partner",
+    label: "Partnerships",
+    value: "Tabbasum Export & Nature International",
   },
 ];
 
@@ -38,9 +43,9 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="scroll-mt-32 bg-[#ece7df] px-5 py-14 text-[#244f35] sm:px-8 lg:px-12 lg:py-20"
+      className="scroll-mt-32 bg-[#ece7df] md:px-5 md:py-14 px-0 py-0 text-[#244f35] sm:px-8 lg:px-12 lg:py-20"
     >
-      <div className="mx-auto max-w-[1320px] rounded-[22px] border border-[#d7c8b0] bg-[#ebe5dc] p-6 shadow-[0_20px_55px_rgba(66,46,27,0.12)] sm:p-8 lg:p-10">
+      <div className="mx-auto max-w-[1320px] md:rounded-[22px] border border-[#d7c8b0] bg-[#ebe5dc] p-6 shadow-[0_20px_55px_rgba(66,46,27,0.12)] sm:p-8 lg:p-10">
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-10">
           <aside>
             <p className="inline-flex items-center gap-3 text-[12px] font-semibold uppercase tracking-[0.3em] text-[#2d8a57]">
@@ -72,7 +77,7 @@ export default function ContactSection() {
                     <p className="text-[12px] uppercase tracking-[0.16em] text-[#73887b]">
                       {item.label}
                     </p>
-                    <p className="mt-0.5 text-[19px] font-semibold text-[#234e35] sm:text-[21px]">
+                    <p className="mt-0.5 text-[16px] font-semibold text-[#234e35] sm:text-[19px]">
                       {item.value}
                     </p>
                   </div>
