@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { products } from "../data/products";
 
 export default function ProductSection() {
@@ -16,37 +17,29 @@ export default function ProductSection() {
             Fresh produce, export ready.
           </h2>
           <p className="mx-auto mt-4 max-w-[760px] text-[16px] leading-[1.8] text-[#6b6259] sm:text-[18px]">
-            A clean, visual product section modeled after your reference grid.
-            Add more fruit or packaging items by extending the `products`
-            array.
+            Click on any product to learn more about its quality, origin, and packaging options.
           </p>
         </div>
 
         <div className="mt-12 grid grid-cols-2 gap-x-6 gap-y-12 sm:grid-cols-3 lg:grid-cols-4">
           {products.map((product) => (
-            <article key={product.name} className="text-center">
-              <div className="relative mx-auto aspect-[1/1] w-full max-w-[320px]">
-                <Image
-                  src={product.src}
-                  alt={product.name}
-                  fill
-                  className="object-contain"
-                />
-              </div>
+            <article key={product.slug} className="text-center">
+              <Link href={`/products/${product.slug}`} className="block">
+                <div className="relative mx-auto aspect-[1/1] w-full max-w-[320px] transition-all duration-300 ease-out hover:-translate-y-3 hover:drop-shadow-[0_24px_20px_rgba(123,63,18,0.22)] hover:[filter:drop-shadow(0_24px_20px_rgba(123,63,18,0.22))_drop-shadow(0_6px_6px_rgba(0,0,0,0.10))]">
+                  <Image
+                    src={product.src}
+                    alt={product.name}
+                    fill
+                    sizes="(max-width: 640px) 45vw, (max-width: 1024px) 30vw, 320px"
+                    className="object-contain"
+                  />
+                </div>
+              </Link>
               <h3 className="mt-4 text-[18px] font-medium text-[#5a5148] sm:text-[20px]">
                 {product.name}
               </h3>
             </article>
           ))}
-        </div>
-
-        <div className="mt-14 flex justify-center">
-          <a
-            href="#about"
-            className="inline-flex min-w-[240px] items-center justify-center rounded-[2px] border border-[#5f5650] px-8 py-4 text-[16px] font-medium text-[#5a5148] transition-colors hover:bg-[#f5f0ea]"
-          >
-            Load More
-          </a>
         </div>
       </div>
     </section>

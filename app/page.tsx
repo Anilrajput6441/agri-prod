@@ -1,3 +1,4 @@
+import Header from "../components/Header";
 import Hero from "../components/Hero";
 import GlobalNetworkSection from "../components/GlobalNetworkSection";
 import WhyChooseUsSection from "../components/WhyChooseUsSection";
@@ -9,6 +10,7 @@ import Footer from "../components/Footer";
 export default function Home() {
   return (
     <>
+      <Header />
       <Hero />
       <GlobalNetworkSection />
       <ProductSection />
@@ -16,7 +18,6 @@ export default function Home() {
       <WhyChooseUsSection />
       <ContactSection />
       <Footer />
-
     </>
   );
 }
