@@ -28,10 +28,21 @@ const partnerCards = [
   },
 ];
 
-const productTags = products.slice(0, 5);
+const chunkProducts = <T,>(items: T[], size: number) => {
+  const chunks: T[][] = [];
+
+  for (let index = 0; index < items.length; index += size) {
+    chunks.push(items.slice(index, index + size));
+  }
+
+  return chunks;
+};
+
+const productSlides = chunkProducts(products, 5);
 
 export default function Hero() {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [activeProductSlide, setActiveProductSlide] = useState(0);
 
   useEffect(() => {
     if (slides.length < 2) return undefined;
@@ -39,6 +50,16 @@ export default function Hero() {
     const interval = window.setInterval(() => {
       setActiveSlide((current) => (current + 1) % slides.length);
     }, 4500);
+
+    return () => window.clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    if (productSlides.length < 2) return undefined;
+
+    const interval = window.setInterval(() => {
+      setActiveProductSlide((current) => (current + 1) % productSlides.length);
+    }, 3200);
 
     return () => window.clearInterval(interval);
   }, []);
@@ -142,25 +163,45 @@ export default function Hero() {
                   ))}
                 </ul>
 
-                <div className="mt-6 grid grid-cols-3 gap-x-4 gap-y-4 sm:grid-cols-5">
-                  {productTags.map((item) => (
-                    <article key={item.name} className="text-center">
-                      <Link href={`/products/${item.slug}`} className="block">
-                        <div className="relative mx-auto h-16 w-full max-w-[88px] sm:h-20 sm:max-w-[96px]">
-                          <Image
-                            src={item.src}
-                            alt={item.name}
-                            fill
-                            sizes="96px"
-                            className="object-contain transition-transform duration-300 hover:scale-110"
-                          />
-                        </div>
-                      </Link>
-                      <p className="mt-2 text-[12px] text-white/78 sm:text-[13px]">
-                        {item.name}
-                      </p>
-                    </article>
-                  ))}
+                <div className="mt-6 overflow-hidden rounded-[28px] border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+                  <div className="grid min-h-[150px] grid-cols-3 gap-x-4 gap-y-4 sm:grid-cols-5">
+                    {productSlides[activeProductSlide].map((item) => (
+                      <article key={item.slug} className="text-center">
+                        <Link href={`/products/${item.slug}`} className="block">
+                          <div className="relative mx-auto h-16 w-full max-w-[88px] sm:h-20 sm:max-w-[96px]">
+                            <Image
+                              src={item.src}
+                              alt={item.name}
+                              fill
+                              sizes="96px"
+                              className="object-contain transition-transform duration-300 hover:scale-110"
+                            />
+                          </div>
+                        </Link>
+                        <p className="mt-2 text-[12px] text-white/78 sm:text-[13px]">
+                          {item.name}
+                        </p>
+                      </article>
+                    ))}
+                  </div>
+
+                  {productSlides.length > 1 ? (
+                    <div className="mt-4 flex items-center justify-center gap-2">
+                      {productSlides.map((_, index) => (
+                        <button
+                          key={`product-slide-${index}`}
+                          type="button"
+                          aria-label={`Show product slide ${index + 1}`}
+                          onClick={() => setActiveProductSlide(index)}
+                          className={`h-2 rounded-full transition-all duration-300 ${
+                            index === activeProductSlide
+                              ? "w-8 bg-[#f8cb64]"
+                              : "w-2 bg-white/35 hover:bg-white/60"
+                          }`}
+                        />
+                      ))}
+                    </div>
+                  ) : null}
                 </div>
               </div>
             </div>
