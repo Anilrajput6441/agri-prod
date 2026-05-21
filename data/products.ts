@@ -63,7 +63,8 @@ export const products: Product[] = [
       "Fumigation Certificate",
       "SGS / Intertek Third-Party Inspection Available",
     ],
-    harvestSeason: "Kharif Season — July to October. Peak availability: October–December.",
+    harvestSeason:
+      "Kharif Season — July to October. Peak availability: October–December.",
   },
   {
     name: "Maize",
@@ -106,7 +107,8 @@ export const products: Product[] = [
       "Fumigation Certificate",
       "SGS / Intertek Inspection Available",
     ],
-    harvestSeason: "Kharif Season — Harvested October–December. Year-round availability from storage.",
+    harvestSeason:
+      "Kharif Season — Harvested October–December. Year-round availability from storage.",
   },
   {
     name: "Wheat",
@@ -149,7 +151,8 @@ export const products: Product[] = [
       "Fumigation Certificate",
       "SGS / Intertek Third-Party Inspection Available",
     ],
-    harvestSeason: "Rabi Season — Harvested March to May. Peak export window: April–July.",
+    harvestSeason:
+      "Rabi Season — Harvested March to May. Peak export window: April–July.",
   },
   {
     name: "Onion",
@@ -176,7 +179,12 @@ export const products: Product[] = [
       { parameter: "Foreign Matter", value: "1% Max" },
       { parameter: "Pesticide Residue", value: "As per EU MRL standards" },
     ],
-    varieties: ["Nasik Red", "Bellary Red", "White Onion (Pusa White)", "Agrifound Light Red"],
+    varieties: [
+      "Nasik Red",
+      "Bellary Red",
+      "White Onion (Pusa White)",
+      "Agrifound Light Red",
+    ],
     grading: "Super A (Export), Grade A, Grade B",
     shipping: {
       loadability: "20–22 MT per 20ft Container",
@@ -192,7 +200,8 @@ export const products: Product[] = [
       "EU Pesticide Residue Compliant",
       "SGS / Intertek Inspection Available",
     ],
-    harvestSeason: "Main crop: November–February (Kharif). Summer crop: March–May. Year-round availability.",
+    harvestSeason:
+      "Main crop: November–February (Kharif). Summer crop: March–May. Year-round availability.",
   },
   {
     name: "Barley",
@@ -219,7 +228,12 @@ export const products: Product[] = [
       { parameter: "Admixture", value: "1% Max" },
       { parameter: "Aflatoxin", value: "10 ppb Max" },
     ],
-    varieties: ["Two-Row Barley", "Six-Row Barley", "Feed Grade Barley", "Malt Grade Barley"],
+    varieties: [
+      "Two-Row Barley",
+      "Six-Row Barley",
+      "Feed Grade Barley",
+      "Malt Grade Barley",
+    ],
     grading: "Food Grade A, Malt Grade, Feed Grade",
     shipping: {
       loadability: "24–26 MT per 20ft Container",
@@ -235,7 +249,8 @@ export const products: Product[] = [
       "Fumigation Certificate",
       "SGS / Intertek Inspection Available",
     ],
-    harvestSeason: "Rabi Season — Harvested March to April. Export availability extends through the storage season.",
+    harvestSeason:
+      "Rabi Season — Harvested March to April. Export availability extends through the storage season.",
   },
   {
     name: "Wheat Flour",
@@ -253,16 +268,27 @@ export const products: Product[] = [
     origin: "Uttar Pradesh & Punjab, India",
     packaging: "1 kg / 5 kg / 25 kg / 50 kg PP bags",
     specs: [
-      { parameter: "Type", value: "Atta (Whole Wheat) / Maida (Refined) / Semolina" },
+      {
+        parameter: "Type",
+        value: "Atta (Whole Wheat) / Maida (Refined) / Semolina",
+      },
       { parameter: "Moisture", value: "13.5% Max" },
       { parameter: "Protein", value: "10% – 12% (Atta) / 9% – 11% (Maida)" },
       { parameter: "Ash Content", value: "0.6% Max (Maida) / 1.2% Max (Atta)" },
       { parameter: "Gluten (Wet)", value: "24% – 28%" },
       { parameter: "Falling Number", value: "280 sec Min" },
-      { parameter: "Fineness (Mesh)", value: "100 mesh (Maida) / 80 mesh (Atta)" },
+      {
+        parameter: "Fineness (Mesh)",
+        value: "100 mesh (Maida) / 80 mesh (Atta)",
+      },
       { parameter: "Foreign Matter", value: "Nil" },
     ],
-    varieties: ["Whole Wheat Atta", "Refined Maida", "Semolina (Sooji/Rava)", "Durum Wheat Flour"],
+    varieties: [
+      "Whole Wheat Atta",
+      "Refined Maida",
+      "Semolina (Sooji/Rava)",
+      "Durum Wheat Flour",
+    ],
     grading: "Food Grade A (Export), Retail Grade, Industrial Grade",
     shipping: {
       loadability: "20–22 MT per 20ft Container",
@@ -278,7 +304,8 @@ export const products: Product[] = [
       "Certificate of Origin",
       "Halal Certified (on request)",
     ],
-    harvestSeason: "Milled year-round from Rabi wheat (harvested March–May). Consistent supply guaranteed.",
+    harvestSeason:
+      "Milled year-round from Rabi wheat (harvested March–May). Consistent supply guaranteed.",
   },
   {
     name: "Pearl Millet",
@@ -305,7 +332,12 @@ export const products: Product[] = [
       { parameter: "Foreign Matter", value: "2% Max" },
       { parameter: "Broken Grains", value: "3% Max" },
     ],
-    varieties: ["Standard Pearl Millet", "White Pearl Millet", "Red Pearl Millet", "Local Desi Pearl Millet"],
+    varieties: [
+      "Standard Pearl Millet",
+      "White Pearl Millet",
+      "Red Pearl Millet",
+      "Local Desi Pearl Millet",
+    ],
     grading: "Food Grade A, Feed Grade B",
     shipping: {
       loadability: "24–26 MT per 20ft Container",
@@ -321,7 +353,8 @@ export const products: Product[] = [
       "Fumigation Certificate",
       "Gluten-Free Certified",
     ],
-    harvestSeason: "Kharif Season — Harvested September–October. Peak export: October–January.",
+    harvestSeason:
+      "Kharif Season — Harvested September–October. Peak export: October–January.",
   },
   {
     name: "Garlic",
@@ -346,7 +379,10 @@ export const products: Product[] = [
       { parameter: "Shelf Life", value: "45–90 days under proper storage" },
       { parameter: "Damaged / Rotten", value: "2% Max" },
       { parameter: "Foreign Matter", value: "1% Max" },
-      { parameter: "Pesticide Residue", value: "As per importing country norms" },
+      {
+        parameter: "Pesticide Residue",
+        value: "As per importing country norms",
+      },
     ],
     varieties: ["Desi Garlic", "Ooty-1", "Yamuna Safed", "Yamuna Safed-3"],
     grading: "Super A, Grade A, Grade B",
@@ -364,7 +400,58 @@ export const products: Product[] = [
       "Fumigation Certificate",
       "SGS / Intertek Inspection Available",
     ],
-    harvestSeason: "Main harvest: February–April. Cold-stored exports available for extended supply.",
+    harvestSeason:
+      "Main harvest: February–April. Cold-stored exports available for extended supply.",
+  },
+  {
+    name: "Cold-Pressed Mustard Oil",
+    slug: "cold-pressed-mustard-oil",
+    src: "/products/cold-pressed-mustard.png",
+    tagline:
+      "Pure wood-pressed mustard oil with rich aroma and natural nutrients",
+    description:
+      "Our cold-pressed mustard oil is extracted using traditional wood-pressed methods to preserve its natural nutrients, pungency, and authentic flavour. Sourced from premium mustard seeds grown in India, the oil is ideal for cooking, pickles, massage, and industrial food applications. Hygienically processed and export-ready, it meets international quality standards.",
+    highlights: [
+      "100% pure and natural cold-pressed oil",
+      "Rich aroma and authentic pungent taste",
+      "Retains natural antioxidants and nutrients",
+      "Suitable for cooking, pickles, and wellness use",
+    ],
+    origin: "Rajasthan, Uttar Pradesh & Haryana, India",
+    packaging: "500 ml / 1 L / 5 L PET bottles, HDPE jars, or bulk tins",
+    specs: [
+      { parameter: "Type", value: "Cold-Pressed / Wood-Pressed Mustard Oil" },
+      { parameter: "Color", value: "Golden Yellow" },
+      { parameter: "Purity", value: "100% Pure Mustard Oil" },
+      { parameter: "FFA", value: "1% Max" },
+      { parameter: "Moisture & Impurities", value: "0.25% Max" },
+      { parameter: "Odour", value: "Natural Strong Mustard Aroma" },
+      { parameter: "Shelf Life", value: "12–18 months" },
+      { parameter: "Admixture", value: "Nil" },
+    ],
+    varieties: [
+      "Kachi Ghani Mustard Oil",
+      "Wood-Pressed Mustard Oil",
+      "Organic Mustard Oil",
+      "Filtered Mustard Oil",
+    ],
+    grading: "Premium Grade, Export Grade",
+    shipping: {
+      loadability: "15–18 MT per 20ft Container",
+      incoterms: "FOB, CIF, CFR",
+      ports: "JNPT (Nhava Sheva), Mundra, Chennai",
+      leadTime: "7–12 days after order confirmation",
+    },
+    certifications: [
+      "FSSAI Approved",
+      "APEDA Certified",
+      "ISO Certified Processing Unit",
+      "Certificate of Origin",
+      "Phytosanitary Certificate",
+      "SGS / Intertek Inspection Available",
+    ],
+    harvestSeason:
+      "Mustard seed harvest season: February–March. Year-round oil production and export supply available.",
   },
   {
     name: "Ginger",
@@ -389,7 +476,10 @@ export const products: Product[] = [
       { parameter: "Shelf Life", value: "20–30 days at ambient storage" },
       { parameter: "Damaged / Rotten", value: "2% Max" },
       { parameter: "Foreign Matter", value: "1% Max" },
-      { parameter: "Residue Compliance", value: "As per destination market norms" },
+      {
+        parameter: "Residue Compliance",
+        value: "As per destination market norms",
+      },
     ],
     varieties: ["Rio-de-Janeiro", "Nadia", "Maran", "Local Fresh Ginger"],
     grading: "Premium, Grade A, Grade B",
@@ -407,7 +497,8 @@ export const products: Product[] = [
       "Fumigation Certificate",
       "SGS / Intertek Inspection Available",
     ],
-    harvestSeason: "Main season: November–February. Fresh supplies continue based on crop region.",
+    harvestSeason:
+      "Main season: November–February. Fresh supplies continue based on crop region.",
   },
   {
     name: "Mango",
@@ -475,7 +566,10 @@ export const products: Product[] = [
       { parameter: "Shelf Life", value: "7–12 days under cold storage" },
       { parameter: "Damaged / Soft", value: "2% Max" },
       { parameter: "Foreign Matter", value: "1% Max" },
-      { parameter: "Residue Compliance", value: "As per destination market norms" },
+      {
+        parameter: "Residue Compliance",
+        value: "As per destination market norms",
+      },
     ],
     varieties: ["G4", "Teja", "Bhavnagri Green", "Hybrid Green Chili"],
     grading: "Premium, Grade A, Grade B",
@@ -493,7 +587,8 @@ export const products: Product[] = [
       "Cold Chain Packing Available",
       "SGS / Intertek Inspection Available",
     ],
-    harvestSeason: "Available through multiple crop cycles across major producing states.",
+    harvestSeason:
+      "Available through multiple crop cycles across major producing states.",
   },
   {
     name: "Pointed Gourd",
@@ -535,7 +630,8 @@ export const products: Product[] = [
       "Cold Chain Packing Available",
       "SGS / Intertek Inspection Available",
     ],
-    harvestSeason: "Main availability: spring to early autumn, with regional continuity in supply.",
+    harvestSeason:
+      "Main availability: spring to early autumn, with regional continuity in supply.",
   },
   {
     name: "Bitter Gourd",
@@ -577,7 +673,8 @@ export const products: Product[] = [
       "Cold Chain Packing Available",
       "SGS / Intertek Inspection Available",
     ],
-    harvestSeason: "Available in multiple sowing cycles depending on region and climate.",
+    harvestSeason:
+      "Available in multiple sowing cycles depending on region and climate.",
   },
   {
     name: "Okra",
@@ -602,9 +699,17 @@ export const products: Product[] = [
       { parameter: "Tenderness", value: "High" },
       { parameter: "Damaged / Soft", value: "2% Max" },
       { parameter: "Foreign Matter", value: "1% Max" },
-      { parameter: "Residue Compliance", value: "As per destination market norms" },
+      {
+        parameter: "Residue Compliance",
+        value: "As per destination market norms",
+      },
     ],
-    varieties: ["Arka Anamika", "Parbhani Kranti", "Hybrid Okra", "Tender Export Selection"],
+    varieties: [
+      "Arka Anamika",
+      "Parbhani Kranti",
+      "Hybrid Okra",
+      "Tender Export Selection",
+    ],
     grading: "Premium, Grade A, Grade B",
     shipping: {
       loadability: "8–10 MT per reefer container",

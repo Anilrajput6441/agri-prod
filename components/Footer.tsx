@@ -60,7 +60,6 @@ export default function Footer() {
               <div className="flex items-start gap-3 text-[15px] text-[#b0bcb5]">
                 <FaPhoneAlt className="mt-0.5 h-4 w-4 shrink-0 text-[#7ab56e]" />
                 <div className="space-y-1">
-                  <p>Dr Mubin Uddin Khan — <a href="tel:+918448237673" className="hover:text-[#f3f0e4]">+91 84482 37673</a></p>
                   <p>Yawar Khan — <a href="tel:+918182019713" className="hover:text-[#f3f0e4]">+91 81820 19713</a></p>
                 </div>
               </div>

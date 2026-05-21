@@ -12,7 +12,7 @@ export default function Home() {
     <>
       <Header />
       <Hero />
-      <GlobalNetworkSection />
+      {/* <GlobalNetworkSection /> */}
       <ProductSection />
       <AboutSection />
       <WhyChooseUsSection />

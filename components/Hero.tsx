@@ -139,13 +139,7 @@ export default function Hero() {
                     <FaLeaf className="h-4 w-4" />
                     Explore Products
                   </Link>
-                  <Link
-                    href="/#network"
-                    className="inline-flex items-center justify-center gap-2 rounded-full border border-white/18 bg-white/5 px-6 py-3 text-[16px] font-semibold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] backdrop-blur-sm transition-colors hover:bg-white/10 sm:min-w-[260px]"
-                  >
-                    <FaHandshake className="h-4 w-4" />
-                    Our Partnerships
-                  </Link>
+                  
                 </div>
               </div>
 
@@ -215,13 +209,7 @@ export default function Hero() {
                 <FaLeaf className="h-4 w-4" />
                 Explore Products
               </Link>
-              <Link
-                href="/#network"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/18 bg-white/5 px-6 py-3 text-[16px] font-semibold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] backdrop-blur-sm transition-colors hover:bg-white/10"
-              >
-                <FaHandshake className="h-4 w-4" />
-                Our Partnerships
-              </Link>
+              
             </div>
           </div>
         </div>

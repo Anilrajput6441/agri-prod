@@ -8,11 +8,9 @@ import {
 import { products } from "../data/products";
 
 const reachItems: Array<{ icon: IconType; label: string; value: string }> = [
-  { icon: FaEnvelope, label: "Email", value: "alifnutri9@gmail.com" },
-  { icon: FaPhoneAlt, label: "Dr Mubin Uddin Khan", value: "+91 84482 37673" },
+  { icon: FaEnvelope, label: "Email", value: "Natureintt@gmail.com" },
   { icon: FaPhoneAlt, label: "Yawar Khan", value: "+91 81820 19713" },
-  { icon: FaMapMarkerAlt, label: "Company", value: "Alif Agro Nutrition" },
-  { icon: FaGlobe, label: "Partnerships", value: "Tabbasum Export & Nature International" },
+  { icon: FaMapMarkerAlt, label: "Company", value: "Nature International" },
 ];
 
 export default function ContactSection() {
