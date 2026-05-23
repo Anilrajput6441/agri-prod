@@ -71,7 +71,7 @@ export default function Header() {
           </div>
 
           <Image
-            src="/aliflogo.png"
+            src="/aliflogo2.png"
             alt="Alif Agro Nutrition"
             width={160}
             height={80}
