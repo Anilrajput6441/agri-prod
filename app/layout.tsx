@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Alif Agro Nutrition",
+  title: "NatureInternational - Premium Agricultural Exports from India",
   description: "Premium agricultural exports from India.",
 };
 

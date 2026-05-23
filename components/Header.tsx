@@ -72,7 +72,7 @@ export default function Header() {
 
           <Image
             src="/aliflogo2.png"
-            alt="Alif Agro Nutrition"
+            alt="Nature International"
             width={160}
             height={80}
             className={`relative h-16 w-auto transition-all duration-500 sm:h-20 lg:h-40 ${

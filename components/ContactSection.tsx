@@ -1,7 +1,9 @@
 import type { IconType } from "react-icons";
 import {
+  FaCertificate,
   FaEnvelope,
   FaGlobe,
+  FaIdCard,
   FaMapMarkerAlt,
   FaPhoneAlt,
 } from "react-icons/fa";
@@ -11,6 +13,9 @@ const reachItems: Array<{ icon: IconType; label: string; value: string }> = [
   { icon: FaEnvelope, label: "Email", value: "Natureintt@gmail.com" },
   { icon: FaPhoneAlt, label: "Yawar Khan", value: "+91 81820 19713" },
   { icon: FaMapMarkerAlt, label: "Company", value: "Nature International" },
+  { icon: FaIdCard, label: "GST Number", value: "09AAVFN5082A1Z0" },
+  { icon: FaCertificate, label: "Certification", value: "APEDA Certified" },
+  { icon: FaGlobe, label: "IEC Number", value: "AAVFN5082A" },
 ];
 
 export default function ContactSection() {

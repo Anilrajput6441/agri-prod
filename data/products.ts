@@ -57,11 +57,7 @@ export const products: Product[] = [
       leadTime: "10–15 days after LC opening",
     },
     certifications: [
-      "FSSAI Approved",
-      "Phytosanitary Certificate",
-      "Certificate of Origin",
-      "Fumigation Certificate",
-      "SGS / Intertek Third-Party Inspection Available",
+      "APEDA Certified",
     ],
     harvestSeason:
       "Kharif Season — July to October. Peak availability: October–December.",
@@ -101,11 +97,6 @@ export const products: Product[] = [
     },
     certifications: [
       "APEDA Certified",
-      "FSSAI Approved",
-      "Phytosanitary Certificate",
-      "Certificate of Origin",
-      "Fumigation Certificate",
-      "SGS / Intertek Inspection Available",
     ],
     harvestSeason:
       "Kharif Season — Harvested October–December. Year-round availability from storage.",
@@ -120,7 +111,7 @@ export const products: Product[] = [
     highlights: [
       "High protein content",
       "Low moisture & impurities",
-      "FSSAI & APEDA certified",
+      "APEDA certified",
       "Available year-round",
     ],
     origin: "Uttar Pradesh & Punjab, India",
@@ -145,11 +136,6 @@ export const products: Product[] = [
     },
     certifications: [
       "APEDA Certified",
-      "FSSAI Approved",
-      "Phytosanitary Certificate",
-      "Certificate of Origin",
-      "Fumigation Certificate",
-      "SGS / Intertek Third-Party Inspection Available",
     ],
     harvestSeason:
       "Rabi Season — Harvested March to May. Peak export window: April–July.",
@@ -160,7 +146,7 @@ export const products: Product[] = [
     src: "/products/onion.png",
     tagline: "Fresh Indian onions with global export standards",
     description:
-      "Alif Agro Nutrition exports premium quality onions sourced directly from major growing regions in India. Our onions are graded, sorted, and packed to meet EU, GCC, and Southeast Asian market requirements.",
+      "Nature International exports premium quality onions sourced directly from major growing regions in India. Our onions are graded, sorted, and packed to meet EU, GCC, and Southeast Asian market requirements.",
     highlights: [
       "Firm texture & pungent flavour",
       "Graded by size & quality",
@@ -194,11 +180,6 @@ export const products: Product[] = [
     },
     certifications: [
       "APEDA Certified",
-      "FSSAI Approved",
-      "Phytosanitary Certificate",
-      "Certificate of Origin",
-      "EU Pesticide Residue Compliant",
-      "SGS / Intertek Inspection Available",
     ],
     harvestSeason:
       "Main crop: November–February (Kharif). Summer crop: March–May. Year-round availability.",
@@ -243,11 +224,6 @@ export const products: Product[] = [
     },
     certifications: [
       "APEDA Certified",
-      "FSSAI Approved",
-      "Phytosanitary Certificate",
-      "Certificate of Origin",
-      "Fumigation Certificate",
-      "SGS / Intertek Inspection Available",
     ],
     harvestSeason:
       "Rabi Season — Harvested March to April. Export availability extends through the storage season.",
@@ -297,12 +273,7 @@ export const products: Product[] = [
       leadTime: "10–15 days after LC opening",
     },
     certifications: [
-      "FSSAI Approved",
       "APEDA Certified",
-      "ISO 22000",
-      "Phytosanitary Certificate",
-      "Certificate of Origin",
-      "Halal Certified (on request)",
     ],
     harvestSeason:
       "Milled year-round from Rabi wheat (harvested March–May). Consistent supply guaranteed.",
@@ -347,11 +318,6 @@ export const products: Product[] = [
     },
     certifications: [
       "APEDA Certified",
-      "FSSAI Approved",
-      "Phytosanitary Certificate",
-      "Certificate of Origin",
-      "Fumigation Certificate",
-      "Gluten-Free Certified",
     ],
     harvestSeason:
       "Kharif Season — Harvested September–October. Peak export: October–January.",
@@ -394,11 +360,6 @@ export const products: Product[] = [
     },
     certifications: [
       "APEDA Certified",
-      "FSSAI Approved",
-      "Phytosanitary Certificate",
-      "Certificate of Origin",
-      "Fumigation Certificate",
-      "SGS / Intertek Inspection Available",
     ],
     harvestSeason:
       "Main harvest: February–April. Cold-stored exports available for extended supply.",
@@ -443,12 +404,7 @@ export const products: Product[] = [
       leadTime: "7–12 days after order confirmation",
     },
     certifications: [
-      "FSSAI Approved",
       "APEDA Certified",
-      "ISO Certified Processing Unit",
-      "Certificate of Origin",
-      "Phytosanitary Certificate",
-      "SGS / Intertek Inspection Available",
     ],
     harvestSeason:
       "Mustard seed harvest season: February–March. Year-round oil production and export supply available.",
@@ -491,11 +447,6 @@ export const products: Product[] = [
     },
     certifications: [
       "APEDA Certified",
-      "FSSAI Approved",
-      "Phytosanitary Certificate",
-      "Certificate of Origin",
-      "Fumigation Certificate",
-      "SGS / Intertek Inspection Available",
     ],
     harvestSeason:
       "Main season: November–February. Fresh supplies continue based on crop region.",
@@ -535,11 +486,6 @@ export const products: Product[] = [
     },
     certifications: [
       "APEDA Certified",
-      "FSSAI Approved",
-      "Phytosanitary Certificate",
-      "Certificate of Origin",
-      "VHT / Hot Water Treatment on request",
-      "SGS / Intertek Inspection Available",
     ],
     harvestSeason: "Peak season: April–July, depending on variety and region.",
   },
@@ -581,11 +527,6 @@ export const products: Product[] = [
     },
     certifications: [
       "APEDA Certified",
-      "FSSAI Approved",
-      "Phytosanitary Certificate",
-      "Certificate of Origin",
-      "Cold Chain Packing Available",
-      "SGS / Intertek Inspection Available",
     ],
     harvestSeason:
       "Available through multiple crop cycles across major producing states.",
@@ -624,11 +565,7 @@ export const products: Product[] = [
       leadTime: "4–7 days after packing confirmation",
     },
     certifications: [
-      "FSSAI Approved",
-      "Phytosanitary Certificate",
-      "Certificate of Origin",
-      "Cold Chain Packing Available",
-      "SGS / Intertek Inspection Available",
+      "APEDA Certified",
     ],
     harvestSeason:
       "Main availability: spring to early autumn, with regional continuity in supply.",
@@ -667,11 +604,7 @@ export const products: Product[] = [
       leadTime: "4–7 days after packing confirmation",
     },
     certifications: [
-      "FSSAI Approved",
-      "Phytosanitary Certificate",
-      "Certificate of Origin",
-      "Cold Chain Packing Available",
-      "SGS / Intertek Inspection Available",
+      "APEDA Certified",
     ],
     harvestSeason:
       "Available in multiple sowing cycles depending on region and climate.",
@@ -719,11 +652,6 @@ export const products: Product[] = [
     },
     certifications: [
       "APEDA Certified",
-      "FSSAI Approved",
-      "Phytosanitary Certificate",
-      "Certificate of Origin",
-      "Cold Chain Packing Available",
-      "SGS / Intertek Inspection Available",
     ],
     harvestSeason: "Available across several crop windows through the year.",
   },
@@ -762,11 +690,6 @@ export const products: Product[] = [
     },
     certifications: [
       "APEDA Certified",
-      "FSSAI Approved",
-      "Phytosanitary Certificate",
-      "Certificate of Origin",
-      "Fumigation Certificate",
-      "Gluten-Free Certified",
     ],
     harvestSeason: "Kharif Season — Harvested September–October.",
   },
@@ -805,11 +728,6 @@ export const products: Product[] = [
     },
     certifications: [
       "APEDA Certified",
-      "FSSAI Approved",
-      "Phytosanitary Certificate",
-      "Certificate of Origin",
-      "Fumigation Certificate",
-      "Gluten-Free Certified",
     ],
     harvestSeason: "Kharif Season — Harvested September–October.",
   },

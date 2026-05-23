@@ -35,7 +35,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
             <div>
               <p className="inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.35em] text-[#9f6c35]">
-                <FaLeaf className="h-3 w-3" /> Alif Agro Nutrition
+                <FaLeaf className="h-3 w-3" /> Nature International
               </p>
               <h1 className="mt-3 font-serif text-[clamp(2.4rem,4vw,4rem)] font-semibold leading-[1.02] tracking-[-0.03em] text-[#3e2d20]">
                 {product.name}

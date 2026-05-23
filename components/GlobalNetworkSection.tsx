@@ -65,9 +65,9 @@ export default function GlobalNetworkSection() {
                   Partnerships
                 </h2>
                 <p className="mt-5 max-w-[620px] text-[17px] leading-[1.65] text-[#5e4b3d]/88">
-                  Alif Agro Nutrition operates in strategic alliance with Tabbasum Export
-                  and Nature International, creating a seamless bridge between Indian
-                  agricultural excellence and international buyers.
+                    Nature International operates in strategic alliance with Tabbasum Export
+                    and Nature International, creating a seamless bridge between Indian
+                    agricultural excellence and international buyers.
                 </p>
 
                 <div className="mt-8 space-y-6">

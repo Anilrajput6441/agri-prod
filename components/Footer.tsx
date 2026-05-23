@@ -20,10 +20,7 @@ const companyLinks = [
 
 const certifications = [
   "APEDA Certified",
-  "ISO 22000",
-  "Global GAP",
-  "FSSAI Approved",
-  "HACCP Compliant",
+  
 ];
 
 export default function Footer() {
@@ -36,7 +33,7 @@ export default function Footer() {
           <div>
             <Image
               src="/aliflogo2.png"
-              alt="Alif Agro Nutrition"
+              alt="Nature International"
               width={160}
               height={64}
               className="h-14 w-auto sm:h-16"
@@ -44,18 +41,18 @@ export default function Footer() {
             />
 
             <p className="mt-4 max-w-[470px] text-[16px] leading-[1.6] text-[#a8b7af]">
-              Alif Agro Nutrition — connecting India&apos;s finest agricultural
+              Nature International — connecting India&apos;s finest agricultural
               produce to global markets. Certified quality, trusted exports,
               international partnerships.
             </p>
 
             <div className="mt-5 space-y-3">
               <a
-                href="mailto:alifnutri9@gmail.com"
+                href="mailto:natureintt@gmail.com"
                 className="flex items-center gap-3 text-[15px] text-[#b0bcb5] transition-colors hover:text-[#f3f0e4]"
               >
                 <FaEnvelope className="h-4 w-4 shrink-0 text-[#7ab56e]" />
-                alifnutri9@gmail.com
+                natureintt@gmail.com
               </a>
               <div className="flex items-start gap-3 text-[15px] text-[#b0bcb5]">
                 <FaPhoneAlt className="mt-0.5 h-4 w-4 shrink-0 text-[#7ab56e]" />
@@ -116,8 +113,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 border-t border-white/10 pt-5 text-[14px] text-[#93a198] sm:flex sm:items-center sm:justify-between sm:text-[15px]">
-          <p>© 2025 Alif Agro Nutrition. All rights reserved.</p>
-          <p className="mt-2 sm:mt-0">Partners: Tabbasum Export & Nature International | Made in India</p>
+          <p>© 2025 Nature International. All rights reserved.</p>
         </div>
       </div>
     </footer>
