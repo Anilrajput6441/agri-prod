@@ -50,26 +50,7 @@ export default function Header() {
             : "border-white/10 bg-[#0f2d1c]/65 shadow-[0_16px_40px_rgba(0,0,0,0.2)]"
         }`}
       >
-        {/* Logo — absolute, floats above the pill */}
-        <Link href="/#hero" className="absolute md:-top-14 left-4 sm:left-6 lg:left-8">
-          {/* Sun glow — behind logo only */}
-          <div
-            className={`absolute left-1/2 top-1/2 -z-10 -translate-x-1/2 -translate-y-1/2 transition-all duration-500 ${
-              scrolled ? "opacity-30 scale-75" : "opacity-100 scale-100"
-            }`}
-          >
-            <div className="h-20 w-20 rounded-full bg-[#f6c94e] opacity-90 blur-[6px] sm:h-24 sm:w-24 lg:h-32 lg:w-32" />
-            <div className="absolute inset-0 -m-4 rounded-full bg-[#f9a825] opacity-40 blur-[14px]" />
-            <div className="absolute inset-0 -m-8 rounded-full bg-[#ffd54f] opacity-20 blur-[28px]" />
-            {[0,30,60,90,120,150,180,210,240,270,300,330].map((deg) => (
-              <div
-                key={deg}
-                className="absolute left-1/2 top-1/2 h-[2px] w-8 origin-left -translate-y-1/2 rounded-full bg-[#ffe082] opacity-60 blur-[1px] sm:w-10 lg:w-14"
-                style={{ transform: `translateY(-50%) rotate(${deg}deg)` }}
-              />
-            ))}
-          </div>
-
+        <Link href="/#hero" className="absolute left-4 md:-top-14 sm:left-6 lg:left-8">
           <Image
             src="/aliflogo2.png"
             alt="Nature International"
