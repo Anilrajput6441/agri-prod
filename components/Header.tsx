@@ -52,7 +52,7 @@ export default function Header() {
       >
         <Link href="/#hero" className="absolute left-4 md:-top-14 sm:left-6 lg:left-8">
           <Image
-            src="/aliflogo2.png"
+            src="/aliflogo2-20260524.png"
             alt="Nature International"
             width={160}
             height={80}

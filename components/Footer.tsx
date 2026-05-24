@@ -32,7 +32,7 @@ export default function Footer() {
           {/* Brand + Contact */}
           <div>
             <Image
-              src="/aliflogo2.png"
+              src="/aliflogo2-20260524.png"
               alt="Nature International"
               width={160}
               height={64}
