@@ -23,6 +23,9 @@ const certifications = [
   
 ];
 
+const gmailComposeUrl =
+  "https://mail.google.com/mail/?view=cm&fs=1&to=natureintt@gmail.com";
+
 export default function Footer() {
   return (
     <footer className="bg-[#ece7df]">
@@ -48,7 +51,9 @@ export default function Footer() {
 
             <div className="mt-5 space-y-3">
               <a
-                href="mailto:natureintt@gmail.com"
+                href={gmailComposeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-3 text-[15px] text-[#b0bcb5] transition-colors hover:text-[#f3f0e4]"
               >
                 <FaEnvelope className="h-4 w-4 shrink-0 text-[#7ab56e]" />

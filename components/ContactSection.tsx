@@ -1,3 +1,6 @@
+"use client";
+
+import type { FormEvent } from "react";
 import type { IconType } from "react-icons";
 import {
   FaCertificate,
@@ -17,6 +20,55 @@ const reachItems: Array<{ icon: IconType; label: string; value: string }> = [
   { icon: FaCertificate, label: "Certification", value: "APEDA Certified" },
   { icon: FaGlobe, label: "IEC Number", value: "AAVFN5082A" },
 ];
+
+const clientEmail = "natureintt@gmail.com";
+
+function getGmailComposeUrl(subject = "", body = "") {
+  const params = new URLSearchParams({
+    view: "cm",
+    fs: "1",
+    to: clientEmail,
+  });
+
+  if (subject) {
+    params.set("su", subject);
+  }
+
+  if (body) {
+    params.set("body", body);
+  }
+
+  return `https://mail.google.com/mail/?${params.toString()}`;
+}
+
+function handleContactSubmit(event: FormEvent<HTMLFormElement>) {
+  event.preventDefault();
+
+  const formData = new FormData(event.currentTarget);
+  const firstName = String(formData.get("firstName") || "").trim();
+  const lastName = String(formData.get("lastName") || "").trim();
+  const email = String(formData.get("email") || "").trim();
+  const product = String(formData.get("product") || "").trim();
+  const message = String(formData.get("message") || "").trim();
+  const name = [firstName, lastName].filter(Boolean).join(" ");
+
+  const body = [
+    message || "I would like to discuss an agricultural export partnership.",
+    "",
+    "Contact details:",
+    name ? `Name: ${name}` : "",
+    email ? `Email: ${email}` : "",
+    product ? `Product Interest: ${product}` : "",
+  ]
+    .filter((line) => line !== "")
+    .join("\n");
+
+  const subject = product
+    ? `Product Inquiry: ${product}`
+    : "Nature International Inquiry";
+
+  window.open(getGmailComposeUrl(subject, body), "_blank", "noopener,noreferrer");
+}
 
 export default function ContactSection() {
   return (
@@ -71,11 +123,12 @@ export default function ContactSection() {
               We respond within 24 hours, including weekends.
             </p>
 
-            <form className="mt-8 space-y-7">
+            <form className="mt-8 space-y-7" onSubmit={handleContactSubmit}>
               <div className="grid gap-7 sm:grid-cols-2">
                 <div>
                   <label className="block text-[14px] uppercase tracking-[0.14em] text-[#5f7668]">First Name</label>
                   <input
+                    name="firstName"
                     type="text"
                     className="mt-3 w-full border-0 border-b-2 border-[#b0c4b8] bg-transparent pb-2 text-[17px] text-[#27372f] outline-none focus:border-[#2d8a57] transition-colors"
                   />
@@ -83,6 +136,7 @@ export default function ContactSection() {
                 <div>
                   <label className="block text-[14px] uppercase tracking-[0.14em] text-[#5f7668]">Last Name</label>
                   <input
+                    name="lastName"
                     type="text"
                     className="mt-3 w-full border-0 border-b-2 border-[#b0c4b8] bg-transparent pb-2 text-[17px] text-[#27372f] outline-none focus:border-[#2d8a57] transition-colors"
                   />
@@ -92,14 +146,20 @@ export default function ContactSection() {
               <div>
                 <label className="block text-[14px] uppercase tracking-[0.14em] text-[#5f7668]">Email *</label>
                 <input
+                  name="email"
                   type="email"
+                  required
                   className="mt-3 w-full border-0 border-b-2 border-[#b0c4b8] bg-transparent pb-2 text-[17px] text-[#27372f] outline-none focus:border-[#2d8a57] transition-colors"
                 />
               </div>
 
               <div>
                 <label className="block text-[14px] uppercase tracking-[0.14em] text-[#5f7668]">Product Interest *</label>
-                <select className="mt-3 w-full border-0 border-b-2 border-[#b0c4b8] bg-transparent pb-2 text-[17px] text-[#27372f] outline-none focus:border-[#2d8a57] transition-colors">
+                <select
+                  name="product"
+                  required
+                  className="mt-3 w-full border-0 border-b-2 border-[#b0c4b8] bg-transparent pb-2 text-[17px] text-[#27372f] outline-none focus:border-[#2d8a57] transition-colors"
+                >
                   <option value="">Select a product</option>
                   {products.map((product) => (
                     <option key={product.name} value={product.name}>
@@ -112,6 +172,7 @@ export default function ContactSection() {
               <div>
                 <label className="block text-[14px] uppercase tracking-[0.14em] text-[#5f7668]">Message</label>
                 <textarea
+                  name="message"
                   rows={4}
                   className="mt-3 w-full resize-none border-0 border-b-2 border-[#b0c4b8] bg-transparent pb-2 text-[17px] text-[#27372f] outline-none focus:border-[#2d8a57] transition-colors"
                 />
