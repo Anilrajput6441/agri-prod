@@ -56,10 +56,56 @@ function getGmailComposeUrl(subject = "", body = "") {
   return `https://mail.google.com/mail/?${params.toString()}`;
 }
 
+function getGmailAppComposeUrl(subject = "", body = "") {
+  const params = new URLSearchParams({
+    to: clientEmail,
+  });
+
+  if (subject) {
+    params.set("subject", subject);
+  }
+
+  if (body) {
+    params.set("body", body);
+  }
+
+  return `googlegmail:///co?${params.toString()}`;
+}
+
+function isIosDevice() {
+  return (
+    /iPhone|iPad|iPod/i.test(window.navigator.userAgent) ||
+    (window.navigator.platform === "MacIntel" &&
+      window.navigator.maxTouchPoints > 1)
+  );
+}
+
 function isMobileDevice() {
   return /Android|iPhone|iPad|iPod|IEMobile|Opera Mini/i.test(
     window.navigator.userAgent
   );
+}
+
+function openGmailAppOrFallbackToMail(subject: string, body: string) {
+  const fallbackTimer = window.setTimeout(() => {
+    if (document.visibilityState === "visible") {
+      window.location.href = getMailtoUrl(subject, body);
+    }
+  }, 900);
+
+  const cancelFallback = () => window.clearTimeout(fallbackTimer);
+  window.addEventListener("pagehide", cancelFallback, { once: true });
+  document.addEventListener(
+    "visibilitychange",
+    () => {
+      if (document.visibilityState === "hidden") {
+        cancelFallback();
+      }
+    },
+    { once: true }
+  );
+
+  window.location.href = getGmailAppComposeUrl(subject, body);
 }
 
 function handleContactSubmit(event: FormEvent<HTMLFormElement>) {
@@ -87,6 +133,11 @@ function handleContactSubmit(event: FormEvent<HTMLFormElement>) {
   const subject = product
     ? `Product Inquiry: ${product}`
     : "Nature International Inquiry";
+
+  if (isIosDevice()) {
+    openGmailAppOrFallbackToMail(subject, body);
+    return;
+  }
 
   if (isMobileDevice()) {
     window.location.href = getMailtoUrl(subject, body);
