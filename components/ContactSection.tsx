@@ -23,6 +23,21 @@ const reachItems: Array<{ icon: IconType; label: string; value: string }> = [
 
 const clientEmail = "natureintt@gmail.com";
 
+function getMailtoUrl(subject = "", body = "") {
+  const params = new URLSearchParams();
+
+  if (subject) {
+    params.set("subject", subject);
+  }
+
+  if (body) {
+    params.set("body", body);
+  }
+
+  const query = params.toString();
+  return `mailto:${clientEmail}${query ? `?${query}` : ""}`;
+}
+
 function getGmailComposeUrl(subject = "", body = "") {
   const params = new URLSearchParams({
     view: "cm",
@@ -39,6 +54,12 @@ function getGmailComposeUrl(subject = "", body = "") {
   }
 
   return `https://mail.google.com/mail/?${params.toString()}`;
+}
+
+function isMobileDevice() {
+  return /Android|iPhone|iPad|iPod|IEMobile|Opera Mini/i.test(
+    window.navigator.userAgent
+  );
 }
 
 function handleContactSubmit(event: FormEvent<HTMLFormElement>) {
@@ -66,6 +87,11 @@ function handleContactSubmit(event: FormEvent<HTMLFormElement>) {
   const subject = product
     ? `Product Inquiry: ${product}`
     : "Nature International Inquiry";
+
+  if (isMobileDevice()) {
+    window.location.href = getMailtoUrl(subject, body);
+    return;
+  }
 
   window.open(getGmailComposeUrl(subject, body), "_blank", "noopener,noreferrer");
 }
