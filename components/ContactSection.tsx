@@ -23,22 +23,22 @@ const reachItems: Array<{ icon: IconType; label: string; value: string }> = [
 
 const clientEmail = "natureintt@gmail.com";
 
-function encodeGmailAppParam(value: string) {
+function encodeEmailParam(value: string) {
   return encodeURIComponent(value);
 }
 
 function getMailtoUrl(subject = "", body = "") {
-  const params = new URLSearchParams();
+  const params = [];
 
   if (subject) {
-    params.set("subject", subject);
+    params.push(`subject=${encodeEmailParam(subject)}`);
   }
 
   if (body) {
-    params.set("body", body);
+    params.push(`body=${encodeEmailParam(body)}`);
   }
 
-  const query = params.toString();
+  const query = params.join("&");
   return `mailto:${clientEmail}${query ? `?${query}` : ""}`;
 }
 
@@ -61,14 +61,14 @@ function getGmailComposeUrl(subject = "", body = "") {
 }
 
 function getGmailAppComposeUrl(subject = "", body = "") {
-  const params = [`to=${encodeGmailAppParam(clientEmail)}`];
+  const params = [`to=${encodeEmailParam(clientEmail)}`];
 
   if (subject) {
-    params.push(`subject=${encodeGmailAppParam(subject)}`);
+    params.push(`subject=${encodeEmailParam(subject)}`);
   }
 
   if (body) {
-    params.push(`body=${encodeGmailAppParam(body)}`);
+    params.push(`body=${encodeEmailParam(body)}`);
   }
 
   return `googlegmail:///co?${params.join("&")}`;
