@@ -23,6 +23,10 @@ const reachItems: Array<{ icon: IconType; label: string; value: string }> = [
 
 const clientEmail = "natureintt@gmail.com";
 
+function encodeGmailAppParam(value: string) {
+  return encodeURIComponent(value);
+}
+
 function getMailtoUrl(subject = "", body = "") {
   const params = new URLSearchParams();
 
@@ -57,19 +61,17 @@ function getGmailComposeUrl(subject = "", body = "") {
 }
 
 function getGmailAppComposeUrl(subject = "", body = "") {
-  const params = new URLSearchParams({
-    to: clientEmail,
-  });
+  const params = [`to=${encodeGmailAppParam(clientEmail)}`];
 
   if (subject) {
-    params.set("subject", subject);
+    params.push(`subject=${encodeGmailAppParam(subject)}`);
   }
 
   if (body) {
-    params.set("body", body);
+    params.push(`body=${encodeGmailAppParam(body)}`);
   }
 
-  return `googlegmail:///co?${params.toString()}`;
+  return `googlegmail:///co?${params.join("&")}`;
 }
 
 function isIosDevice() {
